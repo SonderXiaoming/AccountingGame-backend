@@ -1,3 +1,4 @@
+import math
 import random
 import pandas as pd
 from pathlib import Path
@@ -9,7 +10,7 @@ def read_excel(path: Path, sheet_name: str = None):
 
 def generate_random_numbers(target_sum, count, equal=True):
     if equal:
-        return [target_sum // count] * count
+        return [math.ceil(target_sum / count)] * count
     numbers = sorted(
         [random.randint(1, target_sum - count + 1) for _ in range(count - 1)]
     )
