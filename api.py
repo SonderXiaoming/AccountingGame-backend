@@ -10,12 +10,7 @@ from const import ALL_TYPES
 
 app = FastAPI()
 
-origins = [
-    "http://localhost",
-    "http://localhost:5173",
-    "http://localhost:5174",
-    "http://localhost:3141",
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
